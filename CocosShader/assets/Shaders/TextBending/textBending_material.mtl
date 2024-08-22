@@ -1,0 +1,21 @@
+{
+  "__type__": "cc.Material",
+  "_name": "textBending_material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "db6103ee-ae9d-4014-a9e1-443c20342a27"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "USE_DEGREE": true
+      },
+      "props": {
+        "degree": 0.6
+      }
+    }
+  }
+}

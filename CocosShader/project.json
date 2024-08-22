@@ -1,0 +1,8 @@
+{
+  "engine": "cocos-creator-js",
+  "packages": "packages",
+  "name": "CocosShader",
+  "id": "9c87352f-f0d7-4f51-a84f-cd377da85e7b",
+  "version": "2.4.5",
+  "isNew": false
+}

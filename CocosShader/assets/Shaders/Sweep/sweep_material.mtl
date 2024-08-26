@@ -1,0 +1,27 @@
+{
+  "__type__": "cc.Material",
+  "_name": "sweep_material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "88248852-635b-493d-b758-fcd22cad6dbd"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "USE_SWEEP": true
+      },
+      "props": {
+        "sweepColor": {
+          "__type__": "cc.Color",
+          "r": 232,
+          "g": 39,
+          "b": 39,
+          "a": 255
+        }
+      }
+    }
+  }
+}

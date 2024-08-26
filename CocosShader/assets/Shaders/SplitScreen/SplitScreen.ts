@@ -5,10 +5,10 @@ const { ccclass, property, menu, executeInEditMode } = cc._decorator;
 @menu('2D/SplitScreen')
 export default class SplitScreen extends cc.Component {
 
-    @property({ type: cc.Integer, tooltip: '', })
-    _splitCount: number = 2;
+    @property({ type: cc.Integer, tooltip: '' })
+    _splitCount = 2;
 
-    @property
+    @property({ type: cc.Integer, min: 1 })
     get splitCount() {
         return this._splitCount;
     }

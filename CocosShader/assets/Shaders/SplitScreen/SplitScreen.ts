@@ -2,7 +2,7 @@ const { ccclass, property, menu, executeInEditMode } = cc._decorator;
 
 @ccclass
 @executeInEditMode
-@menu('2D/SplitScreen')
+@menu('Shaders/2D/SplitScreen')
 export default class SplitScreen extends cc.Component {
 
     @property({ type: cc.Integer, tooltip: '' })
@@ -25,7 +25,10 @@ export default class SplitScreen extends cc.Component {
 
     protected onLoad(): void {
         this.m_sprite = this.getComponent(cc.Sprite)!;
-        this.m_material = this.m_sprite.getMaterial(0)!;   //获取材质          
+        this.m_material = this.m_sprite.getMaterial(0)!;   //获取材质  
+        
+        cc.log(this.m_material.name);
+        cc.log(this.m_material.nativeUrl);
         if (this.m_material.name !== "splitScreen_material (Instance)") {
             cc.error("节点：", this.name, "材质的名字不是splitScreen_material");
             return;

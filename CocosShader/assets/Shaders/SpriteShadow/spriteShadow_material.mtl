@@ -1,0 +1,37 @@
+{
+  "__type__": "cc.Material",
+  "_name": "spriteShadow_material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "ac042ccf-a3ba-4a7c-9142-a584faa65a24"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "props": {
+        "offsetY": -0.02,
+        "offsetX": 0.05
+      },
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    },
+    "1": {
+      "props": {
+        "_color": {
+          "__type__": "cc.Color",
+          "r": 220,
+          "g": 20,
+          "b": 20,
+          "a": 255
+        }
+      },
+      "defines": {
+        "USE_TEXTURE": true,
+        "USE_ALPHA_TEST": false,
+        "INPUT_IS_GAMMA": false
+      }
+    }
+  }
+}

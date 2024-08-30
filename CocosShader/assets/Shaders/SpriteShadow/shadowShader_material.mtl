@@ -1,17 +1,17 @@
 {
   "__type__": "cc.Material",
-  "_name": "spriteShadow_material",
+  "_name": "shadowShader_material",
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
-    "__uuid__": "ac042ccf-a3ba-4a7c-9142-a584faa65a24"
+    "__uuid__": "7e9ece74-12bc-470c-9042-06315711f784"
   },
   "_techniqueIndex": 0,
   "_techniqueData": {
     "0": {
       "props": {
-        "offsetY": -0.02,
-        "offsetX": 0.05
+        "offsetY": 10,
+        "offsetX": 10
       },
       "defines": {
         "USE_TEXTURE": true

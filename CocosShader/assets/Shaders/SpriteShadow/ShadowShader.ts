@@ -6,12 +6,12 @@
 const { ccclass, property, menu, executeInEditMode } = cc._decorator;
 
 @ccclass
-@menu('Shaders/2D/SpriteShadow')
+@menu('Shaders/2D/ShadowShader')
 @executeInEditMode
-export default class NewClass extends cc.Component {
+export default class ShadowShader extends cc.Component {
     @property()
     _offsetX = 0.1;
-    @property({ type: cc.Float, range: [-1.0, 1.0] })
+    @property({ type: cc.Float })
     set offsetX(value) {
         this._offsetX = value;
         this.setOffsetX();
@@ -22,13 +22,24 @@ export default class NewClass extends cc.Component {
 
     @property()
     _offsetY = 0.1;
-    @property({ type: cc.Float, range: [-1.0, 1.0] })
+    @property({ type: cc.Float })
     set offsetY(value) {
         this._offsetY = value;
         this.setOffsetY();
     }
     get offsetY() {
         return this._offsetY;
+    }
+
+    @property()
+    _scale = 1;
+    @property({ type: cc.Float })
+    set scale(value) {
+        this._scale = value;
+        this.setScale();
+    }
+    get scale() {
+        return this._scale;
     }
 
     private m_sprite: cc.Sprite = null!;
@@ -61,21 +72,21 @@ export default class NewClass extends cc.Component {
 
     private showWarn() {
         //@ts-ignore
-        if (String(this.m_material.material._name) !== "spriteShadow_material") {
+        if (String(this.m_material.material._name) !== "shadowShader_material") {
             cc.error("节点：", this.name, "材质的名字不是water_shader");
             return;
         }
     }
 
     private setOffsetX() {
-        if (typeof (this.offsetX) !== "undefined") {
-            this.m_material.setProperty("offsetX", this.offsetX, 0);
-        }
+        this.m_material.setProperty("offsetX", this.offsetX, 0);
     }
 
     private setOffsetY() {
-        if (typeof (this.offsetY) !== "undefined") {
-            this.m_material.setProperty("offsetY", this.offsetY, 0);
-        }
+        this.m_material.setProperty("offsetY", this.offsetY, 0);
+    }
+
+    private setScale() {
+        this.m_material.setProperty("scale", this.scale, 0);
     }
 }

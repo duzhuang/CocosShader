@@ -1,0 +1,34 @@
+{
+  "__type__": "cc.Material",
+  "_name": "textGradient_material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "0fad7f12-4885-4438-92e9-a5b5708e8fc6"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "props": {
+        "beginColor": {
+          "__type__": "cc.Color",
+          "r": 255,
+          "g": 0,
+          "b": 0,
+          "a": 255
+        },
+        "endColor": {
+          "__type__": "cc.Color",
+          "r": 84,
+          "g": 213,
+          "b": 17,
+          "a": 255
+        }
+      },
+      "defines": {
+        "USE_TEXTURE": true,
+        "USE_GRADIENT": true
+      }
+    }
+  }
+}

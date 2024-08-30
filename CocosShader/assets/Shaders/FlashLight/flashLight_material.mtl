@@ -1,0 +1,29 @@
+{
+  "__type__": "cc.Material",
+  "_name": "flashLight_material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "d503c831-6c0f-4d8a-b995-bbca9d3ac5ee"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "ENABLE_LIGHT": true
+      },
+      "props": {
+        "lightCenterPoint": {
+          "__type__": "cc.Vec2",
+          "x": 0.1,
+          "y": 0.1
+        },
+        "lightAngle": 45,
+        "lightWidth": 0.18,
+        "enableGradient": 1,
+        "cropAlpha": 1
+      }
+    }
+  }
+}

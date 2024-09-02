@@ -5,15 +5,27 @@ const { ccclass, property, menu, executeInEditMode } = cc._decorator;
 @executeInEditMode
 export default class UVShader extends cc.Component {
     @property()
-    _uvRange = 0.5;
+    _uvRangeH = 0.5;
 
     @property({ type: cc.Float })
-    set uvRange(value) {
-        this._uvRange = value;
-        this.setUVRange();
+    set uvRangeH(value) {
+        this._uvRangeH = value;
+        this.setUVRangeH();
     }
-    get uvRange() {
-        return this._uvRange;
+    get uvRangeH() {
+        return this._uvRangeH;
+    }
+
+    @property()
+    _uvRangeV = 0.5;
+
+    @property({ type: cc.Float })
+    set uvRangeV(value) {
+        this._uvRangeV = value;
+        this.setUVRangeV();
+    }
+    get uvRangeV() {
+        return this._uvRangeV;
     }
 
     private m_sprite: cc.Sprite = null!;
@@ -22,7 +34,9 @@ export default class UVShader extends cc.Component {
     protected start(): void {
         this.m_sprite = this.getComponent(cc.Sprite);
         this.m_material = this.m_sprite.getMaterial(0);
-        this.setUVRange();
+        this.showWarn();
+        this.setUVRangeH();
+        this.setUVRangeV();
     }
 
 
@@ -34,8 +48,12 @@ export default class UVShader extends cc.Component {
         }
     }
 
-    private setUVRange() {
-        this.m_material.setProperty("uvRange", this.uvRange, 0);
+    private setUVRangeH() {
+        this.m_material.setProperty("uvRangeH", this.uvRangeH, 0);
+    }
+
+    private setUVRangeV() {
+        this.m_material.setProperty("uvRangeV", this.uvRangeV, 0);
     }
 }
 

@@ -13,8 +13,8 @@ CCEffect %{
       properties:
         texture: { value: white }
         alphaThreshold: { value: 0.5 }
-        uvRangeH: { value: 0.5 , editor: {tooltip: "范围 0~1"}}
-        uvRangeV: { value: 0.5, editor: {tooltip: "范围 0~1"}}
+        uvPos: { value: [0.0,0.0], editor: {tooltip: "start uv position"}}
+        uvStepSize: { value: [1.0,1.0], editor: {tooltip: "uv step size"}}
 }%
 
 
@@ -58,6 +58,7 @@ CCProgram fs %{
   
   #include <alpha-test>
   #include <texture>
+  #include <cc-global>
 
   in vec4 v_color;
 
@@ -66,26 +67,28 @@ CCProgram fs %{
     uniform sampler2D texture;
   #endif
 
-  uniform UVPARAMS{    
-    float uvRangeH;
-    float uvRangeV;
+  uniform UVSAMEPLEPARAME{
+    vec2 uvPos;
+    vec2 uvStepSize;
   };
-
   void main () {
     vec4 o = vec4(1, 1, 1, 1);
+
     vec2 uv = v_uv0;
 
     #if USE_TEXTURE      
-      o = texture2D(texture, uv);
+      
     #endif
 
-    if(uv.y > uvRangeH){
-      o.rgb *= 0.5;
-    }
+    #if USE_UV_SAMEPLE
+      uv.xy += uvPos * 10.0;
+      uv /= 10.0;
+      uv *= uvStepSize;
 
-    if(uv.x > uvRangeV){
-      o.rgb *= 0.5;
-    }
+      normalize(uv);
+      
+      o = texture2D(texture, uv);
+    #endif
 
     o *= v_color;
 

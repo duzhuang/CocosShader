@@ -1,0 +1,30 @@
+{
+  "__type__": "cc.Material",
+  "_name": "uvSample_material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "ed519fff-cd87-4648-8ba9-9f80ab53df5a"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "USE_UV_SAMEPLE": true
+      },
+      "props": {
+        "uvPos": {
+          "__type__": "cc.Vec2",
+          "x": 0.2,
+          "y": 0.2
+        },
+        "uvStepSize": {
+          "__type__": "cc.Vec2",
+          "x": 2,
+          "y": 2
+        }
+      }
+    }
+  }
+}

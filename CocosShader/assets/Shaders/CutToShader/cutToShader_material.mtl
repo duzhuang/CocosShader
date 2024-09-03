@@ -1,0 +1,24 @@
+{
+  "__type__": "cc.Material",
+  "_name": "cutToShader_material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "fc5c6e81-2485-4964-9f64-aee95c68583c"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "props": {
+        "textureTarget": {
+          "__uuid__": "13e8a4c8-72f2-4eba-8f3e-e98ec2b8b91e"
+        },
+        "direction": 1,
+        "speed": 1
+      },
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    }
+  }
+}

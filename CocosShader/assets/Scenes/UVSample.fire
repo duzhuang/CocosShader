@@ -78,10 +78,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 7
+        "__id__": 8
       },
       {
-        "__id__": 8
+        "__id__": 9
       }
     ],
     "_prefab": null,
@@ -242,6 +242,9 @@
     "_components": [
       {
         "__id__": 6
+      },
+      {
+        "__id__": 7
       }
     ],
     "_prefab": null,
@@ -302,7 +305,7 @@
     "_enabled": true,
     "_materials": [
       {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+        "__uuid__": "ca63e5eb-2e5d-43b8-98f6-ee59f566f6db"
       }
     ],
     "_srcBlendFactor": 770,
@@ -323,6 +326,26 @@
     "_isTrimmedMode": true,
     "_atlas": null,
     "_id": "33HnyMucNARoWm/rOPEYbb"
+  },
+  {
+    "__type__": "2ce46iiodVPnZzUdUDrW1C8",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 5
+    },
+    "_enabled": true,
+    "_uvPos": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_uvStepSize": {
+      "__type__": "cc.Vec2",
+      "x": 0.1,
+      "y": 0.1
+    },
+    "_id": "d4T4Jybk9AhYubRcCmwayD"
   },
   {
     "__type__": "cc.Canvas",

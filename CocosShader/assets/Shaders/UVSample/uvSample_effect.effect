@@ -81,12 +81,11 @@ CCProgram fs %{
     #endif
 
     #if USE_UV_SAMEPLE
-      uv.xy += uvPos * 10.0;
-      uv /= 10.0;
+      uv.xy += uvPos;      
       uv *= uvStepSize;
 
       normalize(uv);
-      
+
       o = texture2D(texture, uv);
     #endif
 

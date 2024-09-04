@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.Material",
+  "_name": "circleTransition_material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "ed3a00dd-1c6c-4d53-b156-2092f6b0bdcb"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "subTexture": {
+          "__uuid__": "13e8a4c8-72f2-4eba-8f3e-e98ec2b8b91e"
+        }
+      }
+    }
+  }
+}

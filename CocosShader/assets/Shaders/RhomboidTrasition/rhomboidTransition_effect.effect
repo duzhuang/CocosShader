@@ -15,6 +15,8 @@ CCEffect %{
         alphaThreshold: { value: 0.5 }
         subTexture: { value: gray }
         speed: { value: 0.5 }
+        cellSize: { value: 32.0 }
+
 }%
 
 
@@ -68,12 +70,12 @@ CCProgram fs %{
 
   uniform RHOMBODPARAMS{
     float speed;
+    float cellSize;
   };
-
-  const float tranSize = 32.0;
+  
   vec4 rhomboidTransition(vec4 mainColor, vec4 subCololr,vec2 uv) {    
-    float xFraction = fract(gl_FragCoord.x/tranSize);
-    float yFraction = fract(gl_FragCoord.y/tranSize);
+    float xFraction = fract(gl_FragCoord.x/cellSize);
+    float yFraction = fract(gl_FragCoord.y/cellSize);
 
     float xDistance = abs(xFraction - 0.5);
     float yDistance = abs(yFraction - 0.5);

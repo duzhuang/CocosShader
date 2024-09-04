@@ -15,7 +15,8 @@
       "props": {
         "subTexture": {
           "__uuid__": "13e8a4c8-72f2-4eba-8f3e-e98ec2b8b91e"
-        }
+        },
+        "speed": 1
       }
     }
   }

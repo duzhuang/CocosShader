@@ -16,6 +16,18 @@ export default class RhomboidTrasition extends cc.Component {
         return this._speed;
     }
 
+    @property
+    _cellSize = 32;
+
+    @property({ type: cc.Integer, min: 1 })
+    set cellSize(value) {
+        this._cellSize = value;
+        this.setCellSize();
+    }
+    get cellSize() {
+        return this._cellSize;
+    }
+
     @property({ type: cc.Texture2D })
     subTexture: cc.Texture2D = null;
 
@@ -27,6 +39,7 @@ export default class RhomboidTrasition extends cc.Component {
         this.m_material = this.m_sprite.getMaterial(0)!;
         this.showWarn();
         this.setSpeed();
+        this.setCellSize();
         this.setSubTexture();
     }
 
@@ -44,5 +57,9 @@ export default class RhomboidTrasition extends cc.Component {
 
     setSubTexture() {
         this.m_material.setProperty('subTexture', this.subTexture);
+    }
+
+    setCellSize(){
+        this.m_material.setProperty('cellSize', this.cellSize);
     }
 }

@@ -80,7 +80,7 @@ CCProgram fs %{
     float angle = atan(uv.y, uv.x) + PI/2.0;
     // 将角度值限制在[0, 2π]的范围内
     float normalizedAngle = mod(angle, 2.0 * PI);
-    float phase = cc_time.x * (1.0 + tranAngle);
+    float phase = cc_time.x * (1.0 + tranAngle) * speed;
     float smValue = smoothstep(normalizedAngle,normalizedAngle+tranAngle,phase);
     mainColor = mix(mainColor, subCololr, smValue);    
 

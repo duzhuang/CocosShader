@@ -1,0 +1,103 @@
+// Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.  
+
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: vs
+      frag: fs
+      blendState:
+        targets:
+        - blend: true
+      rasterizerState:
+        cullMode: none
+      properties:
+        texture: { value: white }
+        alphaThreshold: { value: 0.5 }
+        subTexture: { value: gray }
+        speed: { value: 1 }
+}%
+
+
+CCProgram vs %{
+  precision highp float;
+
+  #include <cc-global>
+  #include <cc-local>
+
+  in vec3 a_position;
+  in vec4 a_color;
+  out vec4 v_color;
+
+  #if USE_TEXTURE
+  in vec2 a_uv0;
+  out vec2 v_uv0;
+  #endif
+
+  void main () {
+    vec4 pos = vec4(a_position, 1);
+
+    #if CC_USE_MODEL
+    pos = cc_matViewProj * cc_matWorld * pos;
+    #else
+    pos = cc_matViewProj * pos;
+    #endif
+
+    #if USE_TEXTURE
+    v_uv0 = a_uv0;
+    #endif
+
+    v_color = a_color;
+    
+    gl_Position = pos;
+  }
+}%
+
+
+CCProgram fs %{
+  precision highp float;
+  
+  #include <alpha-test>
+  #include <texture>
+  #include <cc-global>
+
+  in vec4 v_color;
+  in vec2 v_uv0;
+
+  uniform CIRCLETRANSITION{
+    float speed;
+  };
+
+  uniform sampler2D subTexture;  
+  uniform sampler2D texture;
+
+  const float PI = 3.1415926535897932384626433832795;
+  const float tranAngle =  0.5;
+
+  vec4 circleTransition(vec4 mainColor,vec4 subCololr, vec2 uv){
+    //将纹理坐标映射到[-1,1]
+    uv = (uv-0.5)*2.0;
+    //计算纹理坐标的角度
+    float angle = atan(uv.y, uv.x) + PI/2.0;
+    // 将角度值限制在[0, 2π]的范围内
+    float normalizedAngle = mod(angle, 2.0 * PI);
+    float phase = cc_time.x * (1.0 + tranAngle);
+    float smValue = smoothstep(normalizedAngle,normalizedAngle+tranAngle,phase);
+    mainColor = mix(mainColor, subCololr, smValue);    
+
+    return mainColor;
+  }
+
+  void main () {
+
+    vec2 uv = v_uv0;
+
+    vec4 mainColor = texture2D(texture, v_uv0);
+    vec4 subCololr = texture2D(subTexture, v_uv0);    
+    mainColor = circleTransition(mainColor, subCololr, uv);
+    mainColor *= v_color;
+
+    ALPHA_TEST(mainColor);
+
+    gl_FragColor = mainColor;
+  }
+}%

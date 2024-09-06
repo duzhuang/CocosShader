@@ -342,8 +342,8 @@
     },
     "_uvStepSize": {
       "__type__": "cc.Vec2",
-      "x": 0.1,
-      "y": 0.1
+      "x": 1,
+      "y": 1
     },
     "_id": "d4T4Jybk9AhYubRcCmwayD"
   },

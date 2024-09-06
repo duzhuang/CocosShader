@@ -38,6 +38,7 @@ export default class UVSample extends cc.Component {
         this.m_material = this.m_sprite.getMaterial(0);
         this.showWarn();
         this.setUVPos();
+        this.setUVStepSize();
     }
 
     private showWarn() {

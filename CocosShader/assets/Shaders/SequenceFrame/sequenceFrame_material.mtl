@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.Material",
+  "_name": "sequenceFrame_material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "22457aa8-8b07-4208-8b81-cc5e1433de9f"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      },
+      "props": {
+        "hAmount": 1,
+        "vAmount": 1,
+        "speed": 1
+      }
+    }
+  }
+}

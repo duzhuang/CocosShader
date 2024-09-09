@@ -13,6 +13,7 @@ CCEffect %{
       properties:
         texture: { value: white }
         alphaThreshold: { value: 0.5 }
+        uvoffset: { value: 0.1 }
 }%
 
 
@@ -58,23 +59,36 @@ CCProgram fs %{
   #include <texture>
 
   in vec4 v_color;
+  in vec2 v_uv0;
+  uniform sampler2D texture;
 
-  #if USE_TEXTURE
-    in vec2 v_uv0;
-    uniform sampler2D texture;
-  #endif
+  uniform BLURPARAMS{
+    float uvoffset;
+  };
+
+  vec4 Blur(vec4 mainColor,vec2 uv){
+    vec4 s1 = texture2D(texture, uv + vec2(uvoffset, 0.0));
+    vec4 s2 = texture2D(texture, uv + vec2(-uvoffset, 0.0));
+    vec4 s3 = texture2D(texture, uv + vec2(0.0,uvoffset));
+    vec4 s4 = texture2D(texture, uv + vec2(0.0,uvoffset));  
+    float pct = 0.2;
+    mainColor = mainColor * (1.0- pct*4.0) + s1 * pct + s2 * pct+ s3 * pct + s4 * pct;  
+    return mainColor;
+  }
 
   void main () {
     vec4 o = vec4(1, 1, 1, 1);
+    vec2 uv = v_uv0;
+    vec4 mainColor = texture2D(texture, uv);
 
-    #if USE_TEXTURE
-      CCTexture(texture, v_uv0, o);
+    #if USE_BLUR
+      mainColor = Blur(mainColor, uv);
     #endif
 
-    o *= v_color;
+    mainColor *= v_color;
 
-    ALPHA_TEST(o);
+    ALPHA_TEST(mainColor);
 
-    gl_FragColor = o;
+    gl_FragColor = mainColor;
   }
 }%

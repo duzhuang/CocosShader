@@ -1,0 +1,17 @@
+{
+  "__type__": "cc.Material",
+  "_name": "New Material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "1a27f58d-329e-42a1-9462-3a5692845156"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    }
+  }
+}

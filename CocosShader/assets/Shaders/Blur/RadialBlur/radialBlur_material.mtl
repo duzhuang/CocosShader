@@ -1,0 +1,18 @@
+{
+  "__type__": "cc.Material",
+  "_name": "radialBlur_material",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "79f3ac83-2aae-4997-82e5-9a6224ea1e1e"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "defines": {
+        "USE_TEXTURE": true,
+        "USE_RADIALBLUR": true
+      }
+    }
+  }
+}

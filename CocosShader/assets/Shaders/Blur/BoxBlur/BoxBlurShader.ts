@@ -32,17 +32,6 @@ export default class BoxBlurShader extends cc.Component {
         return this._blurOffset;
     }
 
-    @property()
-    _repeatTimes = 1;
-
-    @property({ type: cc.Integer, visible() { return this.boxBlur } })
-    set repeatTimes(value: number) {
-        this._repeatTimes = value;
-        this.setRepeatTimes();
-    }
-    get repeatTimes() {
-        return this._repeatTimes;
-    }
 
     private m_sprite: cc.Sprite = null;
     private m_material: cc.Material = null;
@@ -69,9 +58,5 @@ export default class BoxBlurShader extends cc.Component {
 
     setUvOffset() {
         this.m_material.setProperty('blurOffset', this._blurOffset);
-    }
-
-    setRepeatTimes(){
-        
     }
 }

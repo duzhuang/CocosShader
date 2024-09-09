@@ -53,10 +53,10 @@ export default class BoxBlurShader extends cc.Component {
     }
 
     setBoxBlur() {
-        this.m_material.define("USE_BOXBLUR", this._boxBlur, 0);
+        this.m_material.define("USE_BOXBLUR", this.boxBlur, 0);
     }
 
     setUvOffset() {
-        this.m_material.setProperty('blurOffset', this._blurOffset);
+        this.m_material.setProperty('blurOffset', this.blurOffset);
     }
 }

@@ -1,6 +1,6 @@
 const { ccclass, property, executeInEditMode, menu } = cc._decorator;
 @ccclass
-@menu('Shaders/2D/BlurShader')
+@menu('Shaders/2D/Blur/Blur')
 @executeInEditMode
 export default class BlurShader extends cc.Component {
 

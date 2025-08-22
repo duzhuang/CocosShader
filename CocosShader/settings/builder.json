@@ -1,0 +1,75 @@
+{
+  "title": "CocosShader",
+  "packageName": "org.cocos2d.demo",
+  "startScene": "1f11dbc6-7ebf-4be4-9709-0a9756dbf8f1",
+  "excludeScenes": [
+    "8cbc50a9-a99c-443c-a966-17090240398b",
+    "c8b4fd9f-14aa-48ef-b31f-fe619e244ae7",
+    "08b2c524-f150-4640-85d8-91814a8149b3",
+    "7a83f900-de52-4b02-bee7-f1db9efa3ad4",
+    "3c6f0b8c-80dc-456b-aeb1-4d577df7eee5",
+    "6b6d7b43-7d6f-4446-a1f4-87f4f4812ee5",
+    "029917f9-b5da-475a-940b-792329d07b60",
+    "d36606fa-d534-4cf3-95fb-841134562f4b",
+    "d852d4ab-eac2-44b9-8761-d1b061b444cc",
+    "a3107d65-80ec-49a6-b1e4-e7c00d2743e5",
+    "0c1a22c4-94b0-4d9c-9b4a-da88f8669229",
+    "085703c0-c69f-4fad-b282-a675ffdeed91",
+    "9b1d1d12-22fb-48bc-ba8c-253dcba6687e",
+    "faffd178-3fdc-454c-8206-3b81ddd79a1d",
+    "56cb341a-698a-4fdd-b65e-7f49fc6d4917",
+    "17297288-a3a0-4ba8-a3ab-54240f5307b7",
+    "48759af0-1fc4-439c-aad6-700bb8c0d740",
+    "ee47ee75-c948-41c8-b6de-dab753fcf110",
+    "7a939892-62c6-4dce-9d78-04631acf141a"
+  ],
+  "orientation": {
+    "landscapeRight": true,
+    "landscapeLeft": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "webOrientation": "auto",
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "mainCompressionType": "default",
+  "mainIsRemote": false,
+  "optimizeHotUpdate": false,
+  "md5Cache": true,
+  "nativeMd5Cache": false,
+  "encryptJs": false,
+  "xxteaKey": "b1e50b9d-19f7-4b",
+  "zipCompressJs": true,
+  "fb-instant-games": {},
+  "android": {
+    "packageName": "org.cocos2d.demo",
+    "REMOTE_SERVER_ROOT": ""
+  },
+  "ios": {
+    "packageName": "org.cocos2d.demo",
+    "REMOTE_SERVER_ROOT": "",
+    "ios_enable_jit": true
+  },
+  "mac": {
+    "packageName": "org.cocos2d.demo",
+    "REMOTE_SERVER_ROOT": "",
+    "width": 1280,
+    "height": 720
+  },
+  "win32": {
+    "REMOTE_SERVER_ROOT": "",
+    "width": 1280,
+    "height": 720
+  },
+  "android-instant": {
+    "packageName": "org.cocos2d.demo",
+    "REMOTE_SERVER_ROOT": "",
+    "pathPattern": "",
+    "scheme": "https",
+    "host": "",
+    "skipRecord": false,
+    "recordPath": ""
+  },
+  "appBundle": false,
+  "agreements": {}
+}

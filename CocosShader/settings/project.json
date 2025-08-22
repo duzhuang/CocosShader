@@ -13,7 +13,29 @@
     ]
   ],
   "excluded-modules": [
-    "3D Physics/Builtin"
+    "DragonBones",
+    "Graphics",
+    "Geom Utils",
+    "Intersection",
+    "Mask",
+    "MotionStreak",
+    "Native Socket",
+    "Physics",
+    "PageView",
+    "PageViewIndicator",
+    "ParticleSystem",
+    "ScrollView",
+    "StudioComponent",
+    "Toggle",
+    "TiledMap",
+    "VideoPlayer",
+    "WebView",
+    "3D",
+    "3D Primitive",
+    "3D Physics/cannon.js",
+    "3D Physics/Builtin",
+    "3D Particle",
+    "SafeArea"
   ],
   "preview-port": 7456,
   "design-resolution-width": 960,
@@ -37,5 +59,6 @@
     "audience": {
       "enable": false
     }
-  }
+  },
+  "last-module-event-record-time": 1755656981463
 }

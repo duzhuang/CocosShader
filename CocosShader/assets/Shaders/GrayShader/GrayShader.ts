@@ -3,7 +3,7 @@ const { ccclass, property, menu, executeInEditMode } = cc._decorator;
 @ccclass
 @menu('Shaders/2D/GrayShader')
 @executeInEditMode
-export default class GrayShader extends cc.Component {   
+export default class GrayShader extends cc.Component {
 
     @property()
     _gray = false;
@@ -27,37 +27,21 @@ export default class GrayShader extends cc.Component {
         return this._grayScaleAmount;
     }
 
-    private m_sprite: cc.Sprite = null!;
-    private m_material: cc.Material = null!;
-
     protected onLoad(): void {
-        this.m_sprite = this.getComponent(cc.Sprite)!;
-        this.m_material = this.m_sprite.getMaterial(0)!;
-        this.showWarn();
         this.setGray();
         this.setGrayScaleAmount();
     }
 
-    private showWarn() {
-        //@ts-ignore
-        if (String(this.m_material.material._name) !== "grayShader_material") {
-            cc.error("节点：", this.name, "材质的名字不是grayShader_material");
-            return;
-        }
+    private setGray() {
+        const isGrayValue = this.gray ? 1.0 : 0.0;
+        const currentMaterial = this.node.getComponent(cc.Sprite).getMaterial(0);
+        //获取当前渲染组件的材质
+        currentMaterial.setProperty('isGray', isGrayValue);
     }
 
-
-    public setGray() {
-        let isGray: number = 0;
-        if (this.gray) {
-            isGray = 1.0;
-        } else {
-            isGray = 0.0;
-        }
-        this.m_material.setProperty('isGray', isGray);
+    private setGrayScaleAmount() {
+        const currentMaterial = this.node.getComponent(cc.Sprite).getMaterial(0);
+        currentMaterial.setProperty('grayScaleAmount', this.grayScaleAmount);
     }
 
-    public setGrayScaleAmount() {
-        this.m_material.setProperty('grayScaleAmount', this.grayScaleAmount);
-    }
 }

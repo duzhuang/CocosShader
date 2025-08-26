@@ -1094,7 +1094,9 @@
     "prefabCard": {
       "__uuid__": "87a88d22-2ba3-4212-aa6c-56a9cab23b92"
     },
-    "prefabCardPlus": null,
+    "prefabCardNoSpriteFrame": {
+      "__uuid__": "7b82fa95-92a9-4095-8b86-1603f94beacc"
+    },
     "_id": "45FhA4F/dDhqOXUULZvTdG"
   }
 ]
